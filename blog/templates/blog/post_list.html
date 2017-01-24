@@ -1,28 +1,11 @@
-<html>
-	<head>
-		<title>Teste Django</title>
-	</head>
-	<body>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+	{% for post in posts %}
 		<div>
-			<h1>Teste de Criação de Página no Django</h1>
+			<h3><a href="{% url 'blog.views.post_detail' pk=post.pk %}">{{post.title}}</a></h3>
+			<p>Publicado em: {{post.published_date}}</p>
+			<p>{{post.text|linebreaksbr}}</p>
 		</div>
-		<div>
-			<h2>Como foi feito?</h2>
-			<p>Estou com os seguintes programas instalados na máquina:</p>
-			<ul><li>so windows 10</li>
-				<li>python 3.6</li>
-				<li>django 1.8.5</li>
-				<li>editor sublime</li>
-			</ul>
-			<p>Todos os comandos eu estou fazendo via prompt.</p>
-		</div>
-		<p>E agora exemplo dos posts feitos no Django!!!</p>
-		{% for post in posts %}
-			<div>
-				<h3><a href="">{{post.title}}</a></h3>
-				<p>Publicado em: {{post.published_date}}</p>
-				<p>{{post.text|linebreaksbr}}</p>
-			</div>
-		{% endfor %}
-	</body>
-</html>
+	{% endfor %}
+{% endblock content %}

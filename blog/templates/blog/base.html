@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<html>
+	<head>
+		<title>Teste Django</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+		<link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+		<div class="topo">
+			<h1>Teste de Criação de Página no Django</h1>
+			<h2>Como foi feito?</h2>
+			<p>Estou com os seguintes programas instalados na máquina:</p>
+			<ul><li>so windows 10</li>
+				<li>python 3.6</li>
+				<li>django 1.8.5</li>
+				<li>editor sublime</li>
+			</ul>
+			<p>Todos os comandos eu estou fazendo via prompt.</p>
+			<p>E agora exemplo dos posts feitos no Django!!!</p>
+		</div>
+		{% block content %}
+		{% endblock %}
+	</body>
+</html>
