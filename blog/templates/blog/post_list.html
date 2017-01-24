@@ -16,5 +16,13 @@
 			</ul>
 			<p>Todos os comandos eu estou fazendo via prompt.</p>
 		</div>
+		<p>E agora exemplo dos posts feitos no Django!!!</p>
+		{% for post in posts %}
+			<div>
+				<h3><a href="">{{post.title}}</a></h3>
+				<p>Publicado em: {{post.published_date}}</p>
+				<p>{{post.text|linebreaksbr}}</p>
+			</div>
+		{% endfor %}
 	</body>
 </html>
